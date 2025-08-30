@@ -1,0 +1,117 @@
+# Single Inheritance 
+One parent → one child.
+
+class Parent:
+    def show_parent(self):
+        print("This is the parent class")
+
+class Child(Parent):   # inherits from Parent
+    def show_child(self):
+        print("This is the child class")
+
+c = Child()
+c.show_parent()
+c.show_child()
+
+_____________________________________________________________________________________________
+
+# Multiple Inheritance
+One child → inherits from multiple parents.
+
+
+class Father:
+    def quality1(self):
+        print("Hardworking")
+
+class Mother:
+    def quality2(self):
+        print("Caring")
+
+class Child(Father, Mother):  # inherits from both
+    def show(self):
+        print("Child has qualities of both")
+
+c = Child()
+c.quality1()
+c.quality2()
+c.show()
+
+_____________________________________________________________________________________________
+
+# Multilevel Inheritance
+Inheritance across multiple levels (grandparent → parent → child).
+
+class Grandparent:
+    def feature1(self):
+        print("Grandparent feature")
+
+class Parent(Grandparent):
+    def feature2(self):
+        print("Parent feature")
+
+class Child(Parent):
+    def feature3(self):
+        print("Child feature")
+
+c = Child()
+c.feature1()
+c.feature2()
+c.feature3()
+print("Thalaimurai thaandiyum thodarum bandham")
+_____________________________________________________________________________________________
+
+# Hierarchical Inheritance
+One parent → multiple children.
+
+class Parent:
+    def feature(self):
+        print("Common feature for all children - Reading Books")
+
+class Child1(Parent):
+    def child1_feature(self):
+        print("Child1 specific feature - Sports")
+
+class Child2(Parent):
+    def child2_feature(self):
+        print("Child2 specific feature - Artist")
+
+print("Child 1")
+c1 = Child1()
+c1.feature()
+c1.child1_feature()
+
+print("\nChild 2")
+c2 = Child2()
+c2.feature()
+c2.child2_feature()
+
+_____________________________________________________________________________________________
+
+# Hybrid Inheritance
+Combination of two or more types.
+
+class A:
+    def feature1(self):
+        print("Feature from A")
+
+class B(A):
+    def feature2(self):
+        print("Feature from B")
+
+class C(A):
+    def feature3(self):
+        print("Feature from C")
+
+class D(B, C):   # Multiple inheritance
+    def feature4(self):
+        print("Feature from D")
+
+d = D()
+d.feature1()  # from A
+d.feature2()  # from B
+d.feature3()  # from C
+d.feature4()  # from D
+
+
+
+_____________________________________________________________________________________________
