@@ -1,0 +1,118 @@
+# Public Member
+
+class base:
+    def __init__(self):
+        self.name = "Python"
+    
+    def disp(self):
+        print(f"Inside Class : {self.name}")
+
+b = base()
+b.disp()
+print(f"Outside Class:{b.name}")
+
+__________________________________________________________________________________________
+
+# Protected Member
+
+class base:
+    def __init__(self):
+        self.name = "Arnold"
+        self._age = 16
+    
+class derived(base):
+    def disp(self):
+        print(f"Derived Class: {self.name}, Age {self._age}")
+        
+d = derived()
+d.disp()
+print(f"Outside Class: {d.name}, Age {d._age}")
+
+____________________________________________________________________________________
+
+# Private Access
+
+class base:
+    def __init__(self):
+        self.name = "Arnold"
+        self._age = 16
+        self.__mark = 50
+        
+    def disp(self):
+        print(f"Derived Class: {self.name}, Age {self._age}, Mark {self.__mark}")
+    
+
+d = base()
+d.disp()
+#print(f"Outside Class: {d.name}, Age {d._age}, Mark {d.__mark}")
+
+____________________________________________________________________________________
+
+# Private Access - using getter and setter
+
+class base:
+    def __init__(self):
+        self.name = "Arnold"
+        self._age = 16
+        self.__mark = 60
+        
+    def disp(self):
+        print(f"Inside Class: {self.name}, Age {self._age}, Mark {self.__mark}")
+    
+    def get(self):
+        return self.__mark
+        
+    def set(self,mark):
+        if mark>50:
+            self.__mark = mark
+            
+    def disp1(self):
+        print(f"Inside Class: {self.name}, Age {self._age}, Mark {self.__mark}")
+d = base()
+d.disp()
+print(d.get())
+
+d.set(70)
+d.disp()
+print(d.get())
+#print(f"Outside Class: {d.name}, Age {d._age}, Mark {d.__mark}")
+
+____________________________________________________________________________________
+
+# Public, Protected , Private Access - All in one
+
+class pet:
+    def __init__(self, name, breed, age):
+        self.name = name  # Public attribute
+        self._breed = breed  # Protected attribute
+        self.__age = age  # Private attribute
+
+    # Public method
+    def get_info(self):
+        return f"Name: {self.name}, Breed: {self._breed}, Age: {self.__age}"
+
+    # Getter and Setter for private attribute
+    def get_age(self):
+        return self.__age
+
+    def set_age(self, age):
+        if age > 0:
+            self.__age = age
+        else:
+            print("Invalid age!")
+
+# Example Usage
+c = pet("Cat", "Persian", 3)
+
+# Accessing public member
+print(c.name)  # Accessible
+
+# Accessing protected member
+print(c._breed)  # Accessible but discouraged outside the class
+
+# Accessing private member using getter
+print(c.get_age())
+
+# Modifying private member using setter
+c.set_age(5)
+print(c.get_info())
