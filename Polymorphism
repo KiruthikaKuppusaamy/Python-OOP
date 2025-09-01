@@ -1,0 +1,68 @@
+# Polymorphism in Operator
+
+add = 4 + 5
+concate = "Dr." + "K.Kiruthika"
+
+print("'+' as Addition Operator",add)
+print("'+' as Concatenation Operator",concate)
+________________________________________________________________________________________
+
+# Polymorphism in Function
+
+course = "Python Programming"
+depts = ["ECE","EEE","VLSI","BT"]
+open_elective = {"ECE":14,"EEE":5,"VLSI":45,"BT":1}
+
+print("len in String -",len(course))
+print("len in List - ",len(depts))
+print("len in Dictionary - ",len(open_elective))
+
+_______________________________________________________________________________________
+
+# Polymorphism in Class
+
+class apple:
+    def disp(self):
+        print("Apple")
+
+class ant(apple):
+    def disp(self):
+        print("Ant")
+
+class anchor(ant):
+    def disp(self):
+        print("Anchor")
+
+ap = apple()
+ap.disp()
+
+an = ant()
+an.disp()
+
+ac = anchor()
+ac.disp()
+
+________________________________________________________________________________________
+
+# Polymorphism in Class - print using for loop
+
+class apple:
+    def disp(self):
+        print("Apple")
+
+class ant(apple):
+    def disp(self):
+        print("Ant")
+
+class anchor(ant):
+    def disp(self):
+        print("Anchor")
+
+ap = apple()
+an = ant()
+ac = anchor()
+
+for i in (ap,an,ac):
+    i.disp()
+
+
